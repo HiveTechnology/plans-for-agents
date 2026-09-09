@@ -39,8 +39,7 @@ them as plain instructions.
 
 ## Read more
 
-The article that explains the method: How I structure `_plans` folders for
-AI coding agents.
-<!-- link lands with the Lab Note -->
+The article that explains how this came about and why to use it:
+[How I structure `_plans` folders for AI coding agents](https://hive.technology/lab-notes/plans-folder-for-agents/).
 
 Hive Technology, 2026.
