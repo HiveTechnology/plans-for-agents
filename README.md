@@ -7,6 +7,22 @@ Working in a chat is effective right up until an agent drifts or a compaction
 forgets. The plan is the durable north star: set an objective, break it into
 manageable chunks, and release it in waves of verifiable work.
 
+## The model
+
+You talk to one agent, the plan-manager. You give it the goal and the
+decisions only you can make. It reads the repository, asks about what is
+ambiguous, writes the plan and the task contracts into `_plans/`, dispatches
+workers one contract each, and reads their results back from the files. You
+do not write those files, and you do not chat with the workers.
+
+```text
+YOU  ⇅  PLAN-MANAGER  →  _plans/  →  WORKERS (one contract each)  →  results  →  PLAN-MANAGER  →  YOU
+```
+
+A clear goal needs almost nothing from you after the goal itself. An unclear
+one turns into a conversation until the decisions are made, and then into
+contracts.
+
 ## Try it in two minutes
 
 Paste this into the agent you already use: Claude Code, Codex, Antigravity,

@@ -21,8 +21,10 @@ index is wrong.
 | Phase | The route being tried now: waves, order, stop and replan conditions. | `_plans/NNN-slug/phases/NNN-slug.md` |
 | Task | A contract for one agent: scope, files, done criteria, validation, stop authority. | `_plans/NNN-slug/tasks/slug/slug.md` |
 
-Plans are human thinking. Phases are where the plan breathes under discovery.
-Tasks are proof the work is ready to execute. When discovery invalidates the
+A plan carries the human's intent and decisions; the plan-manager agent writes
+and maintains it from the conversation. Phases are where the plan breathes
+under discovery. Tasks are contracts the plan-manager writes so that a worker
+starts from a problem that is already clear. When discovery invalidates the
 route, close the phase and open the next one under the same plan. Do not
 replace the plan.
 
@@ -58,6 +60,14 @@ would damage the plan or the system, the agent stops and writes a stop report.
 A humble stop beats a destructive "done".
 
 ## Actors
+
+The human talks to the plan-manager and only the plan-manager. The human owns
+the outcome, the priorities, the consequential decisions, and the sign-off.
+The plan-manager owns understanding the goal, investigating the repository,
+surfacing ambiguity, planning, decomposition, writing and contextualizing
+contracts, dispatch, reconciliation, and replanning. A worker owns one
+contract: execute it, investigate within its scope, report, and stop when it
+is wrong.
 
 - **plan-manager** runs one plan. It reads the spine and the active phase,
   repairs or creates tasks, dispatches only ready tasks, reconciles reports,

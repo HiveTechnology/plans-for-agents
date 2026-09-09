@@ -53,9 +53,10 @@ grep -rl 'status: open' --include='*.md' _plans/
 
 ## Plans, phases, and tasks are different jobs
 
-- **Plan = human thinking.** "We need to clean up the repos." Intent,
-  dependencies, consequences, success criteria. The plan preserves the durable
-  target: what must become true and why.
+- **Plan = the human's intent, written down by the plan-manager.** "We
+  need to clean up the repos." Intent, dependencies, consequences, success
+  criteria. The plan preserves the durable target: what must become true
+  and why. The human decides it; the agent writes and maintains it.
 - **Phase = bounded execution stage.** "Given what we know now, this is the
   route we are trying." A phase progresses the plan. When discovery changes
   the route, close the phase and open the next one. Phases are cheap. One can
@@ -63,9 +64,12 @@ grep -rl 'status: open' --include='*.md' _plans/
 - **Task = agent contract.** "Move this folder here. Update these three files.
   Run tests. Report back." Ambiguity removed. Execution-ready.
 
-Most of the human's time goes into writing precise tasks. That is not
-overhead. By the time a task says exactly which files to touch and what to do
-with them, the problem is solved. The agent is the hands.
+Most of the work of planning is writing precise contracts, and the
+plan-manager does it: it reads the repository, asks the human what only the
+human can decide, and writes tasks that name the files and the done test. By
+the time a contract is that precise, the problem is solved. The worker is
+the hands. The human is not asked to translate "I want X" into four task
+files; that translation is the plan-manager's job.
 
 ---
 
