@@ -1,10 +1,11 @@
 # Plans for agents
 
-A `_plans` folder that keeps AI coding agents from stepping on each other.
+`_plans` keeps your agents from drifting, gives you a surface area to steer
+from, and cuts total tokens, because you have a way of controlling the chaos.
 
-Chat is temporary. The plan is the shared memory. Put the goal, the current
-route, the task contracts, and the results in files that every agent can read
-and update, and you stop being the operating system between them.
+Working in a chat is effective right up until an agent drifts or a compaction
+forgets. The plan is the durable north star: set an objective, break it into
+manageable chunks, and release it in waves of verifiable work.
 
 ## Try it in two minutes
 
