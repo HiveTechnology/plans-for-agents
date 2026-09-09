@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Geist+Mono:wght@400;500;600;700&display=swap');
+[data-preset="editorial"][data-theme="dark"]{
+  --bg:#201F1B; --grid:#2a2926; --panel:rgba(32,31,27,.96); --panel-border:#2a2a2a;
+  --lane-fill:rgba(255,255,255,.025); --lane-stroke:#3a3a35;
+  --text:#D6D6D0; --text-muted:#9a9a9a; --text-dim:#6b6b66; --text-faint:#7a7a75; --mask:#201F1B;
+  --frontend-fill:rgba(214,214,208,.06); --frontend-stroke:#9a9a9a;
+  --backend-fill:rgba(214,214,208,.06); --backend-stroke:#9a9a9a;
+  --database-fill:rgba(219,164,51,.14); --database-stroke:#DBA433;
+  --cloud-fill:rgba(214,214,208,.06); --cloud-stroke:#9a9a9a;
+  --security-fill:rgba(214,214,208,.04); --security-stroke:#7a7a75;
+  --messagebus-fill:rgba(214,214,208,.06); --messagebus-stroke:#9a9a9a;
+  --external-fill:rgba(214,214,208,.04); --external-stroke:#6b6b66;
+  --arrow:#6b6b66; --arrow-emphasis:#DBA433;
+  --toolbar-bg:rgba(32,31,27,.92); --toolbar-border:#2a2a2a; --toolbar-text:#D6D6D0; --toolbar-hover:#2a2926; --toolbar-menu-bg:#201F1B;
+}
+[data-preset="editorial"][data-theme="light"]{
+  --bg:#F4F4F0; --grid:#e8e6e0; --panel:rgba(244,244,240,.96); --panel-border:#d8d6d0;
+  --lane-fill:rgba(43,42,37,.03); --lane-stroke:#d8d6d0;
+  --text:#2B2A25; --text-muted:#6b6b66; --text-dim:#8a8a85; --text-faint:#8a8a85; --mask:#F4F4F0;
+  --frontend-fill:rgba(43,42,37,.04); --frontend-stroke:#8a8a85;
+  --backend-fill:rgba(43,42,37,.04); --backend-stroke:#8a8a85;
+  --database-fill:rgba(219,164,51,.16); --database-stroke:#DBA433;
+  --cloud-fill:rgba(43,42,37,.04); --cloud-stroke:#8a8a85;
+  --security-fill:rgba(43,42,37,.03); --security-stroke:#9a9a95;
+  --messagebus-fill:rgba(43,42,37,.04); --messagebus-stroke:#8a8a85;
+  --external-fill:rgba(43,42,37,.03); --external-stroke:#9a9a95;
+  --arrow:#8a8a85; --arrow-emphasis:#DBA433;
+  --toolbar-bg:rgba(244,244,240,.92); --toolbar-border:#d8d6d0; --toolbar-text:#2B2A25; --toolbar-hover:#e8e6e0; --toolbar-menu-bg:#F4F4F0;
+}
+html[data-preset="editorial"] svg text, html[data-preset="editorial"] .legend, html[data-preset="editorial"] .card, html[data-preset="editorial"] body{
+  font-family:'Geist Mono',ui-monospace,Menlo,monospace !important;
+}
+html[data-preset="editorial"] .header-row h1, html[data-preset="editorial"] h1{
+  font-family:'Outfit',system-ui,sans-serif !important; font-weight:800 !important; letter-spacing:-.015em;
+}
+html[data-preset="editorial"] .diagram-container::after{ content:none !important; }
+html[data-preset="editorial"] .header-row::after{ content:none !important; }

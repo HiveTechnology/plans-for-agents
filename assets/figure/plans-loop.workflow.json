@@ -1,0 +1,254 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "The _plans loop",
+    "visual_preset": "editorial",
+    "quality_profile": "showcase",
+    "legend": {
+      "mode": "auto",
+      "entries": {
+        "external": {
+          "label": "Human"
+        },
+        "backend": {
+          "label": "Plan-manager"
+        },
+        "messagebus": {
+          "label": "Task-runners"
+        },
+        "database": {
+          "label": "Files"
+        },
+        "security": {
+          "label": "Honest stop"
+        }
+      }
+    }
+  },
+  "lanes": [
+    {
+      "id": "human",
+      "label": "Human"
+    },
+    {
+      "id": "manager",
+      "label": "Plan-manager"
+    },
+    {
+      "id": "runners",
+      "label": "Task-runners"
+    },
+    {
+      "id": "files",
+      "label": "_plans/ files"
+    },
+    {
+      "id": "stops",
+      "label": "Honest stops",
+      "variant": "exception"
+    }
+  ],
+  "phases": [
+    {
+      "id": "intent",
+      "label": "Intent",
+      "fromCol": 0,
+      "toCol": 1
+    },
+    {
+      "id": "contract",
+      "label": "Contracts",
+      "fromCol": 2,
+      "toCol": 2,
+      "variant": "emphasis"
+    },
+    {
+      "id": "run",
+      "label": "Run and reconcile",
+      "fromCol": 3,
+      "toCol": 5,
+      "variant": "dashed"
+    }
+  ],
+  "groups": [],
+  "mainPath": [
+    "write_plan",
+    "phase",
+    "contracts",
+    "wave",
+    "task_files",
+    "reconcile",
+    "accept"
+  ],
+  "nodes": [
+    {
+      "id": "write_plan",
+      "lane": "human",
+      "col": 0,
+      "type": "external",
+      "label": "Write the plan",
+      "sublabel": "outcome, why, done",
+      "width": 160
+    },
+    {
+      "id": "accept",
+      "lane": "human",
+      "col": 5,
+      "type": "external",
+      "label": "Accept the outcome",
+      "sublabel": "success criteria proven",
+      "width": 160
+    },
+    {
+      "id": "phase",
+      "lane": "manager",
+      "col": 1,
+      "type": "backend",
+      "label": "Open a phase",
+      "sublabel": "the route, in waves",
+      "width": 160
+    },
+    {
+      "id": "contracts",
+      "lane": "manager",
+      "col": 2,
+      "type": "backend",
+      "label": "Write contracts",
+      "sublabel": "one task per agent",
+      "tag": "human approves",
+      "width": 160
+    },
+    {
+      "id": "reconcile",
+      "lane": "manager",
+      "col": 5,
+      "type": "backend",
+      "label": "Reconcile",
+      "sublabel": "advance, repair, replan",
+      "width": 160
+    },
+    {
+      "id": "wave",
+      "lane": "runners",
+      "col": 3,
+      "type": "messagebus",
+      "label": "Run the wave",
+      "sublabel": "agents in parallel",
+      "width": 160
+    },
+    {
+      "id": "task_files",
+      "lane": "files",
+      "col": 4,
+      "type": "database",
+      "label": "Task files",
+      "sublabel": "progress and results",
+      "tag": "the only state",
+      "width": 160
+    },
+    {
+      "id": "stop",
+      "lane": "stops",
+      "col": 4,
+      "type": "security",
+      "label": "Stop report",
+      "sublabel": "wrong, blocked, harmful",
+      "width": 160
+    }
+  ],
+  "edges": [
+    {
+      "id": "plan-phase",
+      "from": "write_plan",
+      "to": "phase",
+      "label": "outcome"
+    },
+    {
+      "id": "phase-contracts",
+      "from": "phase",
+      "to": "contracts",
+      "label": "first wave",
+      "variant": "emphasis"
+    },
+    {
+      "id": "contracts-wave",
+      "from": "contracts",
+      "to": "wave",
+      "label": "dispatch",
+      "variant": "emphasis",
+      "fromSide": "right",
+      "toSide": "top"
+    },
+    {
+      "id": "wave-files",
+      "from": "wave",
+      "to": "task_files",
+      "label": "write as you go",
+      "variant": "emphasis"
+    },
+    {
+      "id": "files-reconcile",
+      "from": "task_files",
+      "to": "reconcile",
+      "label": "read the file, not the chat",
+      "variant": "emphasis"
+    },
+    {
+      "id": "wave-stop",
+      "from": "wave",
+      "to": "stop",
+      "label": "cannot finish honestly",
+      "variant": "security",
+      "role": "error"
+    },
+    {
+      "id": "stop-reconcile",
+      "from": "stop",
+      "to": "reconcile",
+      "label": "a stop is a result",
+      "variant": "dashed",
+      "role": "return"
+    },
+    {
+      "id": "reconcile-phase",
+      "from": "reconcile",
+      "to": "phase",
+      "label": "next wave, or a new phase",
+      "variant": "dashed",
+      "role": "return"
+    },
+    {
+      "id": "reconcile-accept",
+      "from": "reconcile",
+      "to": "accept",
+      "label": "proven"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "State lives in files",
+      "items": [
+        "Plan, phase, and task files own their status",
+        "Chat, dashboards, and sessions only point at them"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "A stop is a result",
+      "items": [
+        "An agent stops when finishing would damage the plan",
+        "The stop report feeds the next wave"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Human gates",
+      "items": [
+        "Writes the plan, approves contracts, accepts the outcome",
+        "Everything between can run without them"
+      ]
+    }
+  ]
+}

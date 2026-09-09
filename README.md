@@ -6,6 +6,8 @@ Chat is temporary. The plan is the shared memory. Put the goal, the current
 route, the task contracts, and the results in files that every agent can read
 and update, and you stop being the operating system between them.
 
+![One plan, one phase, one wave of tasks. Results are written into the task files and read back by the phase, which writes the next wave or closes.](assets/plans-loop.png)
+
 ## What is here
 
 - `_plans/`: the folder. An inbox, a place for standalone tasks, and one
