@@ -1,7 +1,7 @@
 # Plans for agents
 
 `_plans` keeps your agents from drifting, gives you a surface area to steer
-from, and cuts total tokens, because you have a way of controlling the chaos.
+from, and stops you paying for an agent that went rogue.
 
 Working in a chat is effective right up until an agent drifts or a compaction
 forgets. The plan is the durable north star: set an objective, break it into
