@@ -42,4 +42,10 @@ them as plain instructions.
 The article that explains how this came about and why to use it:
 [How I structure `_plans` folders for AI coding agents](https://hive.technology/lab-notes/plans-for-agents/).
 
-Hive Technology, 2026.
+## License and credit
+
+Copyright Hive Technology, 2026. Released under
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Use it, copy it
+into your repos, change it. Keep a credit line that names Hive Technology
+and links back here. If your changes make it better, a pull request or a
+note is welcome.
