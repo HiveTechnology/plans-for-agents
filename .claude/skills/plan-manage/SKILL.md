@@ -81,8 +81,9 @@ write scopes do not overlap. Sequential waves stay gated.
 
 On Claude Code, run a parallel wave as an agent team: you are the lead, one
 teammate per task, each reading its own contract in its own context window
-(https://code.claude.com/docs/en/agent-teams). On another platform, use its
-sub-agents the same way, one per task. Never run two tasks in one context.
+(https://code.claude.com/docs/en/agent-teams). On another platform, use what
+it provides: sub-agents where it has them, separate sessions or worktrees where
+it does not, one task each. Never run two tasks in one context.
 
 ## Reconcile task reports
 

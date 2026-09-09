@@ -84,8 +84,9 @@ Code and read as plain instructions for any other agent.
 
 ## Rules that do not bend
 
-- Status lives in frontmatter. Files do not move between folders when status
-  changes.
+- Status lives in frontmatter. A status change never moves a file. The only
+  moves are triage out of the inbox and reparenting a deferred task, both
+  with `git mv`.
 - Plans and phases are `NNN-slug`. Tasks are slug only, no date. Every plan
   and task is a folder with a same-name spine file.
 - Every path in a plan, phase, or task file is relative to that file and
