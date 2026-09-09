@@ -70,7 +70,7 @@ them as plain instructions.
 ## Read more
 
 The article that explains how this came about and why to use it:
-[How I structure `_plans` folders for AI coding agents](https://hive.technology/lab-notes/plans-for-agents/).
+[Plans for agents (and humans)](https://hive.technology/lab-notes/plans-for-agents/).
 
 ## License and credit
 
