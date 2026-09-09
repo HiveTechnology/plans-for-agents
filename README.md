@@ -28,7 +28,10 @@ Then explain to me, in your own words:
 4. what an honest stop is, and why a stopped task can be a good result
 
 Finish by telling me what adopting _plans in my current repository would
-involve, and wait for my go.
+involve, and wait for my go. When we run a plan: if you are Claude Code, run
+each parallel wave as an agent team (https://code.claude.com/docs/en/agent-teams),
+one teammate per task. If you are another agent, do the same with the
+sub-agents your platform provides.
 ```
 
 When you are ready, the next line to give it is "Manage `_plans/001-adopt-plans/`".
@@ -63,6 +66,11 @@ real task run through it.
 2. Point your agent's instruction file at `AGENTS.md`.
 3. Give the agent the adoption plan above, or write your first plan with
    `plan-create`.
+4. Run each parallel wave with one agent per task. On Claude Code that is
+   [agent teams](https://code.claude.com/docs/en/agent-teams): the plan-manager
+   chat is the lead, each teammate reads one contract in its own context
+   window. Elsewhere, use your platform's sub-agents the same way. A clean
+   plan first is what makes the parallel part safe.
 
 The skills are written in Claude Code's skill format. Any other agent reads
 them as plain instructions.

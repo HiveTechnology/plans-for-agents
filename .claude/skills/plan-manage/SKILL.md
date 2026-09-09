@@ -79,6 +79,11 @@ Give each task agent:
 Parallel dispatch only for tasks in a `parallel` wave, and only when their
 write scopes do not overlap. Sequential waves stay gated.
 
+On Claude Code, run a parallel wave as an agent team: you are the lead, one
+teammate per task, each reading its own contract in its own context window
+(https://code.claude.com/docs/en/agent-teams). On another platform, use its
+sub-agents the same way, one per task. Never run two tasks in one context.
+
 ## Reconcile task reports
 
 Read the task file, not only the chat report. State lives in the file.
