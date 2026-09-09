@@ -13,9 +13,11 @@ or anything else that can run git. The folder is plain Markdown, so every
 agent reads the same thing.
 
 ```text
-Clone https://github.com/HiveTechnology/plans-for-agents and read, in this
-order: AGENTS.md, _plans/README.md, then _plans/001-adopt-plans/ with its
-phase and its five tasks. Do not change anything in my repository yet.
+Clone https://github.com/HiveTechnology/plans-for-agents into a scratch
+folder outside my repository and read, in this order: AGENTS.md,
+_plans/README.md, .claude/skills/task-run/SKILL.md, then
+_plans/001-adopt-plans/ with its phase and its five tasks. Do not change
+anything in my repository yet.
 
 Then explain to me, in your own words:
 1. what a plan, a phase, and a task each do, and why they are separate files
