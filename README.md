@@ -6,6 +6,32 @@ Chat is temporary. The plan is the shared memory. Put the goal, the current
 route, the task contracts, and the results in files that every agent can read
 and update, and you stop being the operating system between them.
 
+## Try it in two minutes
+
+Paste this into the agent you already use: Claude Code, Codex, Gemini CLI,
+or anything else that can run git. The folder is plain Markdown, so every
+agent reads the same thing.
+
+```text
+Clone https://github.com/HiveTechnology/plans-for-agents and read, in this
+order: AGENTS.md, _plans/README.md, then _plans/001-adopt-plans/ with its
+phase and its five tasks. Do not change anything in my repository yet.
+
+Then explain to me, in your own words:
+1. what a plan, a phase, and a task each do, and why they are separate files
+2. how state stays in those files instead of in this chat
+3. how several agents, from different providers, can work one plan at the
+   same time without colliding
+4. what an honest stop is, and why a stopped task can be a good result
+
+Finish by telling me what adopting _plans in my current repository would
+involve, and wait for my go.
+```
+
+When you are ready, the next line to give it is "Manage `_plans/001-adopt-plans/`".
+That plan walks your repository through adopting the folder and ends with one
+real task run through it.
+
 ![One plan, one phase, one wave of tasks. Results are written into the task files and read back by the phase, which writes the next wave or closes.](assets/plans-loop.png)
 
 ## What is here
@@ -32,9 +58,8 @@ and update, and you stop being the operating system between them.
 1. Copy `_plans/` and `.claude/skills/` into your repo, or start a new repo
    from this one as a template.
 2. Point your agent's instruction file at `AGENTS.md`.
-3. Tell the agent: "Manage `_plans/001-adopt-plans/`." That plan walks your
-   repo through adopting the folder and ends with one real task run through
-   it.
+3. Give the agent the adoption plan above, or write your first plan with
+   `plan-create`.
 
 The skills are written in Claude Code's skill format. Any other agent reads
 them as plain instructions.
