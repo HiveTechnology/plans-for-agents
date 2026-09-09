@@ -9,7 +9,7 @@ manageable chunks, and release it in waves of verifiable work.
 
 ## Try it in two minutes
 
-Paste this into the agent you already use: Claude Code, Codex, Gemini CLI,
+Paste this into the agent you already use: Claude Code, Codex, Antigravity,
 or anything else that can run git. The folder is plain Markdown, so every
 agent reads the same thing.
 
